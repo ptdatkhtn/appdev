@@ -55,10 +55,76 @@ with a USB sound card, a network connection, a microphone.
 
 2. Installation Instructions
 
-	2.1. You can use the command line 'make' to ask the system that create
+	2.1. Open the PUTTY terminal and logging in your IP address you 
+	recieved, the user is pi and enter your password.
+	2.2 There are many useful commands you can execute easily if you know:
+		2.2.1. 'cd..': Change to parent folder.
+		2.2.2. 'mkdir': Make a new folder.
+		2.2.3. 'ls -l': You can see the list files of current folder 
+		in details.
+		2.2.4. 'rm': Delete a file or folder.
+		2.2.5. 'scp': Copy files from one host to another host.
+	2.3. You can use the command line 'make' to ask the system that create
 	the file create the result file.
-	2.2. You will see 'sound.out' file, it means you compile successfully.
+	2.4. You will see 'sound.out' file, it means you compiled successfully.
 
 3. Operating Instructions
 
-	3.1. 
+	3.1. Wave of sound.
+		3.1.1. You use the command line './sound.out' to run the 
+		program.
+		3.1.2. You will see the wave of sounds around you and the peak.
+	3.2. Record the sound.
+		3.2.1. You use the command line './sound.out 440' or 
+		'./sound.out 1000' to run the program.
+		3.2.2. You can choose the quatity of channel (1 or 2) and the
+		time for your record (the unit is second).
+		3.2.3. You start to record.
+		3.2.4. You will receive a testTone.wav and you can hear the 
+		record.
+	
+4. File list (Manifest)
+
+The project contains following files:
+	4.1. makefile: is used to definition the commands for program (like 
+	run, clean files or make .tar file).
+	4.2. README.md: contains information about the project and have the
+	instruction to set up, compile and run.
+	4.3. screen.h: contains library, declaration and defination of 
+	constants and variables for screen.c.
+	4.4. sound.h: contains library, declaration and defination of 
+	constants and variables for sound.c.
+	4.5. comm.h: contains library, declaration and defination of 
+	constants and variables for comm.c.
+	4.6. screen.c: contains functions about screen control, movement, 
+	bar chart display and clear the screen function.
+	4.7. sound.c: contains functions to sense sound through microphone
+	and calculate for dB and find the peaks.
+	4.8. comm.c: send data, calculate 1 second of sound samples into 
+	8-pieces of slow decibel and use libcurl to send data to server.
+	4.9. curltest.c: transfer data from or to a server.
+	4.10. sound.php: save the time and IP address each time user run.
+	4.11. main.c: contains main function that includes others function
+	and will be executed when the project runs.
+	
+5. Copyright / Copyleft.
+
+Mr.Gao Chao from Vaasa University of Apply Sciences is a person who guide 
+me to do this project. We use Raspberry Pi 3. All source code are free to
+use.
+
+6. Contact Information.
+
+Please don't hesitate to contact me in case you have any questions to ask 
+me or you found any mistake in this project.
+My name is PHAN Thanh Dat - student of Vaasa University of Apply Sciences.
+Email: ptdat.thanhdatphan@gmail.com.
+
+7.Credits and Acknowledgements.
+
+I studied a lot during doing this project and Mr.Gao Chao helped so much 
+and I hope you can learn a lot too.
+Thank for reading.
+
+
+	
