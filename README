@@ -1,1 +1,64 @@
 # this is the first version
+This project is to trun a Rasparry PI as an audio device. The device is able
+to do 2 functions: as a sound collector and as a test-tone generator.
+
+Table of Content
+	1. Configuration Instructions
+	2. Installation Instructions
+	3. Operating Instructions
+	4. File list (Manifest)
+	5. Copyright / Copyleft
+	6. Contact Information
+	7. Credits and Acknowledgements
+
+1. Configuration Instructions
+
+The application is running on a Raspharry PI 3 model B. This PI should come
+with a USB sound card, a network connection, a microphone.
+
+1.1 Configure USB sound card as default audio device
+
+	1.1.1. RPi onboard sound card doesn.t have microphone interface. We have
+	 to change the default audio device to be USB sound card.
+	1.1.2. Boot up RPi, and apply the USB sound card. Use 'lsusb' command
+	 to check if your USB sound card is mounted.
+	1.1.3. Use 'sudo nano /etc/asound.conf.command'and put following 
+	content to the file:
+	
+	pcm.!default {
+		type plug
+		slave {
+		pcm "hw:1,0"
+		}
+	}
+	ctl.!default {
+		type hw
+		card 1
+	}
+
+	1.1.4. Go to your home directory. Use 'nano .asoundrc' command and put
+	 the same content to the file.
+	1.1.5. Run 'alsamixer' you should be able to see that USB sound card
+	is the default audio device. For a more sensitive sound detection, 
+	it is better to maximize the volume of 'Mic'.
+
+1.2 Install libcurl
+
+	1.2.1 First use command "ls /usr/include/curl" or 
+	"ls /usr/include/arm-linux-gnueabihf/curl" to identify that libcurl
+	 library is installed.
+	1.2.2 If the folder doesn't exist. Run 'sudo apt-get update' to update
+	 the application list.
+	1.2.3 Run 'sudo apt-get install libcurl3' to install the libcurl3.
+	1.2.4 Run 'sudo apt-get install libcurl4-openssl-dev' to install the
+	 development API of libcurl4.
+
+2. Installation Instructions
+
+	2.1. You can use the command line 'make' to ask the system that create
+	the file create the result file.
+	2.2. You will see 'sound.out' file, it means you compile successfully.
+
+3. Operating Instructions
+
+	3.1. 
