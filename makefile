@@ -11,5 +11,5 @@ clean :
 	rm $(OBJ) $(APPNAME)
 
 zip :
-	tar cf sound.tar *.c *.h makefile
+	tar cf sound.tar *.c *.h makefile README
 
