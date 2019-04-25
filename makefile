@@ -1,4 +1,4 @@
-OBJ = main.o screen.o sound.o
+OBJ = main.o screen.o sound.o comm.o
 APPNAME = sound.out
 
 $(APPNAME) : $(OBJ)
