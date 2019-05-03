@@ -103,11 +103,11 @@ void testTone(int c, int f, float d){
 	fillID(h.Subchunk2ID, "data");
 	h.Subchunk1Size = 16;	//For PCM
 	h.AudioFormat = 1;
-	h.NumChanels = c;
+	h.NumChannels = c;
 	h.SampleRate = 44100;
-	h.BitsSample = 16;
-	h.ByteRate = h.SampleRate * c * h.BitsSample / 8;
-	h.BlockAlign = c * h.BitsSample / 8;
+	h.BitsPerSample = 16;
+	h.ByteRate = h.SampleRate * c * h.BitsPerSample / 8;
+	h.BlockAlign = c * h.BitsPerSample / 8;
 	h.Subchunk2Size = d * h.SampleRate * h.BlockAlign;
 	h.ChunkSize = h.Subchunk2Size + 36;
 	
